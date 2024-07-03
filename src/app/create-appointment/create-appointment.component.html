@@ -1,0 +1,150 @@
+<nav style="margin: auto" class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand" href="home">
+    <img
+      src="assets/kalpa.png"
+      alt="Kalpavriksha Logo"
+      style="width: 50px; height: auto; text-color: white"
+    />
+    <span style="color: #00c6a9">Kalpavriksha</span>
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a
+          style="color: white"
+          class="nav-link active"
+          aria-current="page"
+          href="javascript:void(0);"
+          routerLink="/appointmentlist"
+          >Back</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+<section class="book_section layout_padding">
+<div class="container">
+  <hr />
+  <hr />
+  <hr />
+  <br />
+  <h2>Add New Appointment</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="appointment.patientName"
+        name="name"
+        placeholder="Enter Name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Age</label>
+      <input
+        type="text"
+        class="form-control"
+        id="age"
+        [(ngModel)]="appointment.age"
+        name="age"
+        placeholder="Enter Age"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Symptoms</label>
+      <input
+        type="text"
+        class="form-control"
+        id="symptoms"
+        [(ngModel)]="appointment.symptoms"
+        name="symptoms"
+        placeholder="Enter Symptoms"
+      />
+    </div>
+    <div class="form-group">
+      <label>Doctor</label>
+      <select
+        class="form-control"
+        id="selectType"
+        name="userType"
+        [(ngModel)]="appointment.doctorId"
+      >
+        <option *ngFor="let doctor of doctors" [value]="doctor.id">
+          {{ doctor.name }} 
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="number"
+        [(ngModel)]="appointment.phoneNumber"
+        name="number"
+        placeholder="Enter Number"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input
+        id="date"
+        type="date"
+        class="form-control"
+        [(ngModel)]="selectedDate"
+        name="date"
+        (change)="onDateChange()"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="timeSlot">Time Slot</label>
+      <table class="table table-bordered">
+        <tbody>
+          <ng-container *ngFor="let row of timeSlotTable; let rowIndex = index">
+            <tr>
+              <ng-container *ngFor="let timeSlot of row; let colIndex = index">
+                <td
+                  *ngIf="timeSlot !== ''"
+                  [ngClass]="{
+                    available: isTimeSlotAvailable(timeSlot),
+                    'not-available': !isTimeSlotAvailable(timeSlot),
+                    timeSlot: isSelected(timeSlot)
+                  }"
+                  (click)="selectTimeSlot(timeSlot)"
+                 
+                >
+                  {{ timeSlot }}
+                </td>
+                <td *ngIf="timeSlot === ''"></td>
+              </ng-container>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div class="btn-box">
+      <button type="submit" class="btn">Submit</button>
+      <button type="cancel" class="btn" id="cancel" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>
+</section>

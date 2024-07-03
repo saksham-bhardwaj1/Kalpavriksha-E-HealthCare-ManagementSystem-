@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header text-center">
+      <h2>Kalpavriksha Hospital Bill</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Patient Information</h5>
+          <p>Name: <span th:text="${name}"></span></p>
+          <p>Age: <span th:text="${age}"></span></p>
+<!--          <p>Address: <span th:text="${patient.address}"></span></p>-->
+        </div>
+        <div class="col-md-6 text-right">
+          <h5>Bill Details</h5>
+          <p>Bill No: <span th:text="${billNo}"></span></p>
+          <p>Date: <span th:text="${date}"></span></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h5>Services</h5>
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Service Charges</td>
+              <td th:text="${charges}"></td>
+            </tr>
+            <tr>
+              <td>Fee Charges</td>
+              <td th:text="${billAmount}"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <h5>Total: <span th:text="${billTotal}"></span></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

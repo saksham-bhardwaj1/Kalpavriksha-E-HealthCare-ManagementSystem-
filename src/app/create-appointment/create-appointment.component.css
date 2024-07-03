@@ -1,0 +1,10 @@
+@import url("responsive.css");
+@import url("style.css");
+@import url("style.scss");
+
+.timeSlot{
+background-color:aquamarine;
+}
+#cancel{
+    margin-left: 20px;
+}
