@@ -14,5 +14,6 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
     Appointment findByDateAndTimeSlot(String date, TimeSlot timeSlot);
 
   List<Appointment> findAllByDate(String date);
+
 }
 

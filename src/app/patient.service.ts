@@ -44,3 +44,4 @@ export class PatientService {
     return this.httpClient.get<Patient[]>(`${this.baseUrl}?type=doctor`);
   }
 }
+ 

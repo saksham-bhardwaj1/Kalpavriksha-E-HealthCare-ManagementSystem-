@@ -27,9 +27,9 @@ export class DocdashComponent implements OnInit {
   viewPatient(id: number) {
     this.router.navigate(['viewpatient', id]);
   }
-  updatePatient(id: number) {
-    this.router.navigate(['updatepatient', id]);
-  }
+  // updatePatient(id: number) {
+  //   this.router.navigate(['updatepatient', id]);
+  // }
   showBill(id: number) {
     // this.router.navigate(['display-bill', id]);
     const url = this.router.serializeUrl(

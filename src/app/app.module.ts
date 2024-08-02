@@ -22,7 +22,7 @@ import { UpdateMedicineComponent } from './update-medicine/update-medicine.compo
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
 import { ViewPatientComponent } from './view-patient/view-patient.component';
-import { SuperAdminLoginComponent } from './superadminlogin/superadminlogin.component';
+// import { SuperAdminLoginComponent } from './superadminlogin/superadminlogin.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
@@ -92,7 +92,7 @@ const routes: Routes = [
     canActivate: [AuthGaurdService],
   },
   { path: 'viewpatient/:id', component: ViewPatientComponent },
-  { path: 'superadminlogin', component: SuperAdminLoginComponent },
+  // { path: 'superadminlogin', component: SuperAdminLoginComponent },
   { path: 'superadmindash', component: SuperAdminDashComponent },
   { path: 'patientdash', component: PatientdashComponent },
   {
@@ -118,7 +118,7 @@ const routes: Routes = [
     AppointmentListComponent,
     CreateAppointmentComponent,
     ViewPatientComponent,
-    SuperAdminLoginComponent,
+    // SuperAdminLoginComponent,
     SignupComponent,
     LoginComponent,
     SuperAdminDashComponent,

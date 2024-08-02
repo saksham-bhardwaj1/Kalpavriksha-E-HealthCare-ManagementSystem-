@@ -29,6 +29,7 @@ export class SuperAdminDashComponent implements OnInit {
   }
   updatePatient(id: number) {
     this.router.navigate(['updatepatient', id]);
+    this.getPatients();
   }
 
   deletePatient(id: number) {

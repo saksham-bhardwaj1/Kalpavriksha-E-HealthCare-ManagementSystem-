@@ -10,3 +10,4 @@ export class Patient {
   password: string;
   type: string;
 }
+

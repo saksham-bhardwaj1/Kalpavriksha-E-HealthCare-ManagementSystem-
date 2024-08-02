@@ -19,9 +19,9 @@ public class UserController {
   public User createUser(@RequestBody User user) throws AuthenticationException {
     return userService.createUser(user);
   }
-  @PutMapping()
-  public User updateUser(@RequestBody User user){
-    return userService.updateUser(user);
+  @PutMapping("/{id}")
+  public User updateUser(@PathVariable Long id,@RequestBody User user){
+    return userService.updateUser(id, user);
   }
   @GetMapping("/{id}")
   public User getUser(@PathVariable Long id){

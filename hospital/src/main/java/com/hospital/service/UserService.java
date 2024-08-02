@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserService {
   User createUser(User user) throws AuthenticationException;
   void deleteUser(Long id);
-  User updateUser(User user);
+  User updateUser(Long id, User user);
   List<User> getList(String type);
 
   User getUser(Long id);

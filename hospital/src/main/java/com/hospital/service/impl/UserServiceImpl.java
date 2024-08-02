@@ -40,8 +40,12 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public User updateUser(User user) {
-    return userRepository.save(user);
+  public User updateUser(Long id,User user) {
+    User user1= userRepository.findById(id).get();
+    user1.setAge(user.getAge());
+    user1.setName(user.getName());
+    user1.setBlood(user.getBlood());
+    return userRepository.save(user1);
   }
 
   @Override
